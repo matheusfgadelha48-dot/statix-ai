@@ -2,6 +2,7 @@
 import { initCommand } from "./commands/init";
 import { doctorCommand } from "./commands/doctor";
 import { generateCommand } from "./commands/generate";
+import { setupCommand } from "./commands/setup";
 
 const program = new Command();
 
@@ -17,12 +18,17 @@ program
 
 program
   .command("doctor")
-  .description("Verifica a saúde e a configuração do projeto")
+  .description("Verifica a saúde e configuração do projeto")
   .action(doctorCommand);
 
 program
   .command("generate")
   .description("Gera estruturas da aplicação")
   .action(generateCommand);
+
+program
+  .command("setup")
+  .description("Prepara automaticamente a estrutura da STARTIX IA")
+  .action(setupCommand);
 
 program.parseAsync(process.argv);

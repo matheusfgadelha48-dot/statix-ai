@@ -9,7 +9,8 @@
     "lint": "eslint",
     "startix:init": "tsx cli/index.ts init",
     "startix:doctor": "tsx cli/index.ts doctor",
-    "startix:generate": "tsx cli/index.ts generate"
+    "startix:generate": "tsx cli/index.ts generate",
+    "startix:setup": "tsx cli/index.ts setup"
   },
   "dependencies": {
     "chalk": "^6.0.0",
