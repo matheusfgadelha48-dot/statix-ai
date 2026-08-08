@@ -22,9 +22,12 @@ program
   .action(doctorCommand);
 
 program
-  .command("generate")
-  .description("Gera estruturas da aplicação")
-  .action(generateCommand);
+  .command("generate <type> <name>")
+  .description("Gera páginas e componentes automaticamente")
+  .action(async (type: string, name: string) => {
+    process.argv.push(type, name);
+    await generateCommand();
+  });
 
 program
   .command("setup")
