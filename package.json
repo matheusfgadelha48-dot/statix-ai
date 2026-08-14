@@ -14,6 +14,7 @@
     "startix:config": "tsx cli/index.ts config"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
     "chalk": "^6.0.0",
     "commander": "^15.0.0",
     "fs-extra": "^11.4.0",
