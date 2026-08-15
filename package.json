@@ -11,7 +11,8 @@
     "startix:doctor": "tsx cli/index.ts doctor",
     "startix:generate": "tsx cli/index.ts generate",
     "startix:setup": "tsx cli/index.ts setup",
-    "startix:config": "tsx cli/index.ts config"
+    "startix:config": "tsx cli/index.ts config",
+    "startix:auth": "tsx cli/index.ts auth"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

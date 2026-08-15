@@ -4,6 +4,7 @@ import { doctorCommand } from "./commands/doctor";
 import { generateCommand } from "./commands/generate";
 import { setupCommand } from "./commands/setup";
 import { configCommand } from "./commands/config";
+import { createAuthCommand } from "./commands/auth";
 
 const program = new Command();
 
@@ -39,5 +40,10 @@ program
   .command("config")
   .description("Verifica a configuração do projeto")
   .action(configCommand);
+
+program
+  .command("auth")
+  .description("Cria a estrutura de autenticação da STARTIX IA")
+  .action(createAuthCommand);
 
 program.parseAsync(process.argv);
