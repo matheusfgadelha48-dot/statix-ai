@@ -15,6 +15,7 @@
     "startix:auth": "tsx cli/index.ts auth"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.112.3",
     "chalk": "^6.0.0",
     "commander": "^15.0.0",

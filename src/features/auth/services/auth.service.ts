@@ -1,31 +1,16 @@
-﻿import { supabase } from "@/lib/supabase/client";
-import type { AuthCredentials, SignUpData } from "../types/auth.types";
+﻿import { supabase } from '@/lib/supabase';
 
 export const authService = {
-  async signUp({ email, password, name }: SignUpData) {
-    return supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          name,
-        },
-      },
-    });
-  },
+  async getCurrentUserProfile() {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return null;
 
-  async signIn({ email, password }: AuthCredentials) {
-    return supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-  },
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .single();
 
-  async signOut() {
-    return supabase.auth.signOut();
-  },
-
-  async getSession() {
-    return supabase.auth.getSession();
-  },
+    return { ...user, profile };
+  }
 };
